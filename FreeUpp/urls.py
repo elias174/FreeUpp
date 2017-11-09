@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.auth.views import logout_then_login
+from views import modal_login, register_user
 
 urlpatterns = [
     url(r'^store/', include('store.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('django.contrib.auth.urls'), name='accounts'),
+    url(r'^modal-login', modal_login, name='modal_login'),
+    url(r'^register', register_user, name='register_user'),
+
 ]
