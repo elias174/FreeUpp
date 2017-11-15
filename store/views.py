@@ -8,3 +8,7 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'index.html', {})
 
+
+def add_product(request):
+	return render(request, 'add_product.html', {})
+
