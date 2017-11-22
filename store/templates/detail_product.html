@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div id="heading-breadcrumbs">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h1>Empresa</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <img class="img-responsive" src="https://vignette2.wikia.nocookie.net/risassonrisas-y-carcajadas/images/f/f4/Pizza.png/revision/latest?cb=20140126003432&path-prefix=es">
+                    </div>
+                    <div class="col-md-7">
+                        <h1>Promoción</h1>
+                        <h4>Horario 12:00 PM - 1:00 PM</h4>
+                        <hr>
+                        <p>Descripcion del producto</p>
+                        <hr>
+                        <h5>Presente el siguiente código para hacer válida la promoción</h5>
+                        <h2>ASD123</h2>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container -->
+
+<!--             <div class="container-full">
+                <img style="width: 100%" src="http://cdn.20m.es/img2/recortes/2015/05/31/227065-620-282.jpg">
+            </div> -->
+            <div class="container-full">
+                <div id="map"></div>
+            </div>
+            
+            <script>
+              var map;
+              function initMap() {
+                var myLatLng = {lat: -16.400756, lng: -71.540815};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  center: myLatLng,
+                  zoom: 15
+                });
+                var marker = new google.maps.Marker({
+                  position: myLatLng,
+                  map: map,
+                  title: 'Aquí!'
+                });
+              }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuIQoSgag4Wdg1votxkoqXHmlkGFj8SeM&callback=initMap"
+            async defer></script>
+                </div>
+                <!-- /#content -->
+</section>
+{% endblock %}
+
+
+<!-- Google API Key: AIzaSyDuIQoSgag4Wdg1votxkoqXHmlkGFj8SeM -->

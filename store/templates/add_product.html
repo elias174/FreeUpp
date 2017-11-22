@@ -7,34 +7,50 @@
             <div class="container">
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-md-offset-3">
                         <div class="box">
-                            <h2 class="text-uppercase">Nueva Cuenta</h2>
+                            <h2 class="text-uppercase">Agregar Nueva Promoción</h2>
 
-                            <p>With registration with us new world of fashion, fantastic discounts and much more opens to you! The whole process will not take you more than a minute!</p>
-                            <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+                            <p class="text-muted">Si surge algún problema <a href="contact.html">contáctanos</a>, nuestro equipo está disponible 24/7.</p>
 
                             <hr>
 
                             <form action="{% url 'register_user' %}" method="post">
                                 <div class="form-group">
-                                    <label for="name-login">Username</label>
-                                    <input type="text" class="form-control" name="username">
+                                    <label>Título de la promoción</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="email-login">Email</label>
-                                    <input type="text" class="form-control" name="email">
+                                    <label>Descripción</label>
+                                    <textarea class="form-control" rows="3"></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password-login">Password</label>
-                                    <input type="password" class="form-control" name="password1">
+                                    <label>Día y horario</label>
+                                    <input type="text" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label for="password-login">Repeat Password</label>
-                                    <input type="password" class="form-control" name="password2">
+                                    <label>Empresa</label>
+                                    <select class="form-control">
+                                      <option>1</option>
+                                      <option>2</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Categoría</label>
+                                    <select class="form-control">
+                                      <option>1</option>
+                                      <option>2</option>
+                                      <option>3</option>
+                                      <option>4</option>
+                                      <option>5</option>
+                                    </select>
+                                </di
+                                <div class="form-group">
+                                    <label>Imagen</label>
+                                    <input type="file" class="form-control">
                                 </div>
                                 <div class="text-center">
-                                    <input type="submit" value="Registrarse" class="btn btn-template-main"></input>
+                                    <input type="submit" value="Agregar Promoción" class="btn btn-template-main"></input>
                                 </div>
                                 <br>
                                 {% if form.errors %}
