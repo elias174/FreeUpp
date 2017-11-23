@@ -50,149 +50,24 @@
                 <div class="heading text-center">
                     <h2>Promociones Recientes</h2>
                 </div>
-
+                {% for product in products %}
                 <div class="row">
                     <div class="col-md-6" style="margin: 10px 0px">
                         <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
+                            <a href="{% url 'detail_product' pk=product.id %}">
+                                <img class="img-responsive" src="{{ product.image_url }}">
                             </a>
                         </div>
                         <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
+                            <h5>{{ product.company }}</h5>
+                            <a href="{% url 'detail_product' pk=product.id %}">
+                                <h4>{{ product.description }}</h4>
                             </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
-                        </div>
-                    </div>
-                    <div class="col-md-6" style="margin: 10px 0px">
-                        <div class="col-sm-4">
-                            <a href="">
-                                <img class="img-responsive" src="http://lorempixel.com/200/150/food">
-                            </a>
-                        </div>
-                        <div class="col-sm-8">
-                            <h5>Empresa</h5>
-                            <a href="">
-                                <h4>Descripción del producto o servicio</h4>
-                            </a>
-                            <span>10:00 AM - 12:00PM</span>
+                            <span>{{ product.date }}</span>
                         </div>
                     </div>
                 </div>
+                {% endfor %}
                 <!-- /.row -->
             </div>
         </div>

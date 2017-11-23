@@ -11,7 +11,8 @@ from .forms import ProductForm
 from .models import Product
 
 def index(request):
-    return render(request, 'index.html', {})
+    products = Product.objects.all().order_by('timestamp')
+    return render(request, 'index.html', {'products': products})
 
 
 @login_required
