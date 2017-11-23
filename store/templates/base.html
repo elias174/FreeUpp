@@ -177,6 +177,7 @@
     });
     function category_loads() {
         $("#category-select").attr('data-toggle', 'dropdown');
+        $('#menu-category').empty();
         for(var i=0; i<categories.length; i++){
             var url_category = '"{% url 'categories' pk=2 %}"'.replace("2", categories[i][0]);
             $('#menu-category').append('<li><a href='+ url_category +'>' + categories[i][1] + '</a> </li>')
