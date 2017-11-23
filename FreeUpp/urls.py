@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth.views import logout_then_login
-from views import modal_login, register_user
+from .views import modal_login, register_user
 
 urlpatterns = [
     url(r'^store/', include('store.urls')),

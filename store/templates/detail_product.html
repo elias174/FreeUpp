@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-<section>
-    <div id="heading-breadcrumbs">
+    <section>
+        <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
@@ -27,8 +27,11 @@
                         <p>{{ product.description }}</p>
                         <hr>
                         {% if product.code %}
-                        <h5>Presente el siguiente código para hacer válida la promoción</h5>
-                        <h2>ASD123</h2>
+                            <h5>Presente el siguiente código para hacer válida la promoción</h5>
+                            <h2>ASD123</h2>
+                        {% endif %}
+                        {% if product.link %}
+                            <a href="{{ product.link }}"> {{ product.link }}</a>
                         {% endif %}
                     </div>
                 </div>
@@ -37,33 +40,36 @@
             </div>
             <!-- /.container -->
 
-<!--             <div class="container-full">
-                <img style="width: 100%" src="http://cdn.20m.es/img2/recortes/2015/05/31/227065-620-282.jpg">
-            </div> -->
-            <div class="container-full">
-                <div id="map"></div>
-            </div>
-            
+            <!--             <div class="container-full">
+                            <img style="width: 100%" src="http://cdn.20m.es/img2/recortes/2015/05/31/227065-620-282.jpg">
+                        </div> -->
+            {% if product.location %}
+                <div class="container-full">
+                    <div id="map"></div>
+                </div>
+            {% endif %}
+
+
             <script>
-              var map;
-              function initMap() {
-                var myLatLng = {lat: -16.400756, lng: -71.540815};
-                var map = new google.maps.Map(document.getElementById('map'), {
-                  center: myLatLng,
-                  zoom: 15
-                });
-                var marker = new google.maps.Marker({
-                  position: myLatLng,
-                  map: map,
-                  title: 'Aquí!'
-                });
-              }
+                var map;
+                function initMap() {
+                    var myLatLng = {lat: -16.400756, lng: -71.540815};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        center: myLatLng,
+                        zoom: 15
+                    });
+                    var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: 'Aquí!'
+                    });
+                }
             </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuIQoSgag4Wdg1votxkoqXHmlkGFj8SeM&callback=initMap"
-            async defer></script>
-                </div>
-                <!-- /#content -->
-</section>
+                    async defer></script>
+        </div>
+        <!-- /#content -->
+    </section>
 {% endblock %}
 
 

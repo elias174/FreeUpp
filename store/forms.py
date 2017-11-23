@@ -1,9 +1,6 @@
 from django import forms
-from django.contrib.auth.models import User
-from django.contrib.admin.widgets import AdminDateWidget
-from suit.widgets import SuitDateWidget
 
-from models import Product, Category
+from .models import Product, Category
 
 
 class ProductForm(forms.ModelForm):
