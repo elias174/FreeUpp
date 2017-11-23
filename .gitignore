@@ -100,8 +100,5 @@ ENV/
 # mypy
 .mypy_cache/
 
-# Sqlite3
-.sqlite3
-
 # DS_Store
 .DS_Store
