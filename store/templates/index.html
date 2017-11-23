@@ -50,8 +50,9 @@
                 <div class="heading text-center">
                     <h2>Promociones Recientes</h2>
                 </div>
-                {% for product in products %}
                 <div class="row">
+                {% for product in products %}
+                
                     <div class="col-md-6" style="margin: 10px 0px">
                         <div class="col-sm-4">
                             <a href="{% url 'detail_product' pk=product.id %}">
@@ -66,8 +67,9 @@
                             <span>{{ product.date }}</span>
                         </div>
                     </div>
-                </div>
+                
                 {% endfor %}
+                </div>
                 <!-- /.row -->
             </div>
         </div>

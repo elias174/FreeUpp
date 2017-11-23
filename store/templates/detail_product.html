@@ -7,7 +7,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>{{ product.company }}</h1>
+                        <h1>{{ product.title }}</h1>
                     </div>
                 </div>
             </div>
@@ -18,10 +18,10 @@
 
                 <div class="row">
                     <div class="col-md-5">
-                        <img class="img-responsive" src="{{ product.image_url }}">
+                        <img class="img-responsive" style="width: 100%" src="{{ product.image_url }}">
                     </div>
                     <div class="col-md-7">
-                        <h1>Promoción</h1>
+                        <h1>{{ product.description }}</h1>
                         <h4>Horario {{ product.date }}</h4>
                         <hr>
                         <p>{{ product.description }}</p>
