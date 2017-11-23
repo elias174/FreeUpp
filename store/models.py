@@ -13,11 +13,15 @@ from django.core.validators import URLValidator
 class Category(models.Model):
     name = models.CharField(max_length=140)
 
+    def __unicode__(self):
+        return self.name
+
 
 class Product(models.Model):
     title = models.CharField(max_length=250)
     description = models.TextField()
-    date = models.TextField()
+    timestamp = models.DateTimeField(auto_now=True)
+    date = models.DateField()
     company = models.ForeignKey(User, null=True)
     location = models.CharField(max_length=400)
     code = models.CharField(max_length=250)
